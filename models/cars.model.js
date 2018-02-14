@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 
 const CarSchema = mongoose.Schema({
   name: { type: String, required: true, unique: true, index: true },
-}, { collection: 'Car' });
+}, { collection: 'Cars' });
 
-const CarsModel = mongoose.model('Car', CarSchema);
+const CarsModel = mongoose.model('Cars', CarSchema);
 
 CarsModel.getAll = () => {
   return CarsModel.find({});

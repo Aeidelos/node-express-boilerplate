@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aeidelos/express-mongoose-es7-boilerplate.git"
+    "url": "git+https://github.com/Aeidelos/node-express-boilerplate.git"
   },
   "keywords": [
     "Node.js",
     "Javascript",
     "Express"
   ],
-  "author": "Tom Yitav <tomyitav@gmail.com>",
+  "author": "",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
@@ -58,7 +58,8 @@
       "no-use-before-define": 0,
       "arrow-body-style": 0,
       "dot-notation": 0,
-      "no-console": 0
+      "no-console": 0,
+      "semi":  ["error", "never"]
     },
     "env": {
       "mocha": true

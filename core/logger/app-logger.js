@@ -1,12 +1,12 @@
-import * as winston from 'winston';
-import * as rotate from 'winston-daily-rotate-file';
-import config from '../config/config.dev';
-import * as fs from 'fs';
+import * as winston from 'winston'
+import * as rotate from 'winston-daily-rotate-file'
+import config from '../config/config.dev'
+import * as fs from 'fs'
 
-const dir = config.logFileDir;
+const dir = config.logFileDir
 
 if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir);
+  fs.mkdirSync(dir)
 }
 
 
@@ -24,6 +24,6 @@ const logger = new winston.Logger({
       datePattern: '.dd-MM-yyyy',
     }),
   ],
-});
+})
 
-export default logger;
+export default logger

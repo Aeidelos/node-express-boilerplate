@@ -6,7 +6,7 @@ import cors from 'cors';
 import logger from './core/logger/app-logger';
 import config from './core/config/config.dev';
 import cars from './routes/cars.route';
-import connectToDb from './db/connect';
+import connectToDb from './db/connect'
 
 const port = config.serverPort;
 logger.stream = {
@@ -27,9 +27,11 @@ app.use('/cars', cars);
 
 // Index route
 app.get('/', (req, res) => {
-  res.send('Invalid endpoint!!!');
+  res.send('API REQUEST');
 });
 
 app.listen(port, () => {
   logger.info('server started - ', port);
 });
+
+export default app;
