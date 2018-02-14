@@ -1,37 +1,36 @@
 /* eslint-disable no-unused-vars */
-import express from 'express';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import cors from 'cors';
-import logger from './core/logger/app-logger';
-import config from './core/config/config.dev';
-import cars from './routes/cars.route';
+import express from 'express'
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
+import cors from 'cors'
+import logger from './core/logger/app-logger'
+import config from './core/config/config.dev'
+import cars from './routes/cars.route'
 import connectToDb from './db/connect'
 
-const port = config.serverPort;
+const port = config.serverPort
 logger.stream = {
   write(message, encoding) {
-    logger.info(message);
+    logger.info(message)
   },
-};
+}
 
-connectToDb();
+connectToDb()
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan('dev', { stream: logger.stream }));
-
-app.use('/cars', cars);
+const app = express()
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(morgan('dev', { stream: logger.stream }))
+app.use('/cars', cars)
 
 // Index route
 app.get('/', (req, res) => {
-  res.send('API REQUEST');
-});
+  res.send('API REQUEST')
+})
 
 app.listen(port, () => {
-  logger.info('server started - ', port);
-});
+  logger.info('server started - ', port)
+})
 
-export default app;
+export default app
