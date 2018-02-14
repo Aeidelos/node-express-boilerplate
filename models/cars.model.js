@@ -1,22 +1,22 @@
 /* eslint-disable new-cap */
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const CarSchema = mongoose.Schema({
   name: { type: String, required: true, unique: true, index: true },
-}, { collection: 'Cars' });
+}, { collection: 'Cars' })
 
-const CarsModel = mongoose.model('Cars', CarSchema);
+const CarsModel = mongoose.model('Cars', CarSchema)
 
 CarsModel.getAll = () => {
-  return CarsModel.find({});
-};
+  return CarsModel.find({})
+}
 
 CarsModel.addCar = (carToAdd) => {
-  return carToAdd.save();
-};
+  return carToAdd.save()
+}
 
 CarsModel.removeCar = (carName) => {
-  return CarsModel.remove({ name: carName });
-};
+  return CarsModel.remove({ name: carName })
+}
 
-export default CarsModel;
+export default CarsModel
