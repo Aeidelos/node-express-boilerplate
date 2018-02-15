@@ -34,7 +34,7 @@ npm run build
 After npm building the project, go to project root directory, open shell and run:
 
 ```
-docker build -t express-mongoose-boilerplate.
+docker build -t node-express-boilerplate.
 ```
 
 ## Debugging with Webstorm
